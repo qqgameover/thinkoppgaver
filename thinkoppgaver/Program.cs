@@ -22,9 +22,8 @@ namespace thinkoppgaver
             int totalVowels = text.Count(vowels.Contains);
             string[] split = text.Split(" ");
             string longest = split.OrderByDescending(word => word.Length).First();
-            int longestLen = longest.Length;
             Console.WriteLine(
-                $"Total number of words: {split.Length}, the longest word is: {longest} and is {longestLen} letters long. There are {totalVowels} vowels in this text.");
+                $"Total number of words: {split.Length}, the longest word is: {longest} and is {longest.Length} letters long. There are {totalVowels} vowels in this text.");
         }
 
         /*
