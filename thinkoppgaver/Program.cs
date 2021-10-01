@@ -14,7 +14,8 @@ namespace thinkoppgaver
             string text = Console.ReadLine();
             string[] split = text.Split(" ");
             string longest = split.OrderByDescending(word => word.Length).First();
-            Console.WriteLine($"Total number of words:{split.Length} and the longest word is: {longest}");
+            int longestLen = longest.Length;
+            Console.WriteLine($"Total number of words:{split.Length} and the longest word is: {longest} and is {longestLen} letters");
         }
         /*
          * ########
