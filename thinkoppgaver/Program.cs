@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace thinkoppgaver
@@ -9,14 +10,23 @@ namespace thinkoppgaver
         {
             //MakeFirst();
             //MakeSecond();
+            var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
             MakeThird();
             Console.WriteLine();
-            string text = Console.ReadLine();
+            GetSentenceInfo(vowels);
+        }
+
+        private static void GetSentenceInfo(HashSet<char> vowels)
+        {
+            string text = Console.ReadLine().ToLower();
+            int totalVowels = text.Count(vowels.Contains);
             string[] split = text.Split(" ");
             string longest = split.OrderByDescending(word => word.Length).First();
             int longestLen = longest.Length;
-            Console.WriteLine($"Total number of words:{split.Length} and the longest word is: {longest} and is {longestLen} letters");
+            Console.WriteLine(
+                $"Total number of words: {split.Length}, the longest word is: {longest} and is {longestLen} letters long. There are {totalVowels} vowels in this text.");
         }
+
         /*
          * ########
             ######
